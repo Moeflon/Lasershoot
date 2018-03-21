@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :code
       t.boolean :alive
       t.timestamps null: false
-      t.references :games
+      t.references :game
     end
   end
 end
