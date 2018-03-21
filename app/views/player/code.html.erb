@@ -10,6 +10,16 @@
 
 
 <script>
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/round_start", true);
+  xhttp.send();
+
 // Set the date we're counting down to
 var countDownDate = new Date("Sep 5, 2017 15:37:25").getTime();
  console.log(countDownDate)
