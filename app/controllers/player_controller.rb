@@ -3,6 +3,10 @@ class PlayerController < ApplicationController
   end
 
   def code
+    if !player.alive
+      render text: "u ded"
+      return
+    end
     if request.post?
       player = current_user
       if player.alive
