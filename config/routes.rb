@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   post 'login' => 'player#login'
   get 'code' => 'player#code', as: :code
   post 'code' => 'player#code'
+
+  get 'current_code', to: 'player#current', as: :current
+  get 'round_start', to: 'player#start', as: :start
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
