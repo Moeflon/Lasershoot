@@ -3,7 +3,7 @@ class PlayerController < ApplicationController
   end
 
   def code
-    if !player.alive
+    if !current_user.alive
       render text: "u ded"
       return
     end
