@@ -1,10 +1,23 @@
 class PlayerController < ApplicationController
   def index
-
   end
 
   def code
+    if request.post?
+      player = current_user
+      if player.alive
+        player.code = params[:code]
+        player.save
+      end
+    end
+  end
 
+  def current
+    render text: Game.last.code
+  end
+
+  def start
+    render text: Game.last.updated_at.to_time.to_i
   end
 
   def login
